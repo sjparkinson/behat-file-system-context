@@ -1,0 +1,53 @@
+{
+    "name": "sjparkinson/behat-file-system-context",
+
+    "description": "An in memory filesystem context for behat.",
+
+    "license": "MIT",
+
+    "authors": [
+        {
+            "name": "Samuel Parkinson",
+            "email": "sam.james.parkinson@gmail.com"
+        }
+    ],
+
+    "autoload": {
+        "psr-4": {
+            "SamParkinson\\Behat\\Context\\": "src/"
+        }
+    },
+
+    "autoload-dev": {
+        "psr-4": {
+            "SamParkinson\\Behat\\Test\\": "tests/src/"
+        }
+    },
+
+    "require": {
+        "php": ">=5.5",
+        "adlawson/vfs": "^0.9",
+        "behat/behat": "^3.0",
+        "hamcrest/hamcrest-php": "^1.0"
+    },
+
+    "require-dev": {
+        "leaphub/phpcs-symfony2-standard": "^2.0",
+        "phpunit/phpunit": "^4.0",
+        "squizlabs/php_codesniffer": "^2.0"
+    },
+
+    "scripts": {
+        "test": [
+            "composer lint",
+            "composer test:unit",
+            "composer test:functional",
+            "composer test:features"
+        ],
+        "test:unit": "vendor/bin/phpunit --colors=always --testsuite unit",
+        "test:functional": "vendor/bin/phpunit --colors=always --testsuite functional",
+        "test:features": "vendor/bin/behat --colors --format progress",
+        "lint": "vendor/bin/phpcs -p --colors --standard=vendor/leaphub/phpcs-symfony2-standard/leaphub/phpcs/Symfony2/ src/ tests/src/",
+        "lint:fix": "vendor/bin/phpcbf --standard=vendor/leaphub/phpcs-symfony2-standard/leaphub/phpcs/Symfony2/ src/ tests/src/"
+    }
+}

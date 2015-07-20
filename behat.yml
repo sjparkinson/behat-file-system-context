@@ -1,0 +1,7 @@
+default:
+  suites:
+    application:
+      paths:
+        - tests/features/
+      contexts:
+        - SamParkinson\Behat\Context\FileSystemContext
