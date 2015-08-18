@@ -26,7 +26,7 @@
 
     "require": {
         "php": ">=5.5",
-        "adlawson/vfs": "^0.9",
+        "adlawson/vfs": "^0.12",
         "behat/behat": "^3.0",
         "hamcrest/hamcrest-php": "^1.0"
     },
